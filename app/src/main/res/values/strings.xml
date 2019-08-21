@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">CarPark</string>
+    <string name="free_text1">Free</string>
+    <string name="free_text2">Free</string>
+    <string name="free_text3">Free</string>
+    <string name="license">What is the license?</string>
+    <string name="brand">What is the brand?</string>
+    <string name="name">Who want to park?</string>
+    <string name="done">Done</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
 </resources>

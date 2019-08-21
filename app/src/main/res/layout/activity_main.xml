@@ -8,12 +8,105 @@
         tools:context=".MainActivity">
 
     <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/app_name"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/app_name_text"
+            android:layout_marginLeft="@dimen/margin_wide"
+            android:layout_marginTop="@dimen/margin_wide" android:layout_marginRight="@dimen/margin_wide"
+            android:textAlignment="center" android:fontFamily="@font/roboto" android:background="@color/colorPrimary"
+            android:textColor="@android:color/black" android:textSize="24sp"/>
+    <Button
+            android:text="@string/free_text1"
+            android:id="@+id/first_button" style="@style/button_style"
+            android:background="@color/button"
+            android:layout_width="100dp" android:layout_height="60dp" android:fontFamily="@font/roboto"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/second_button"
+            app:layout_constraintBaseline_toBaselineOf="@+id/second_button"/>
+    <Button
+            android:text="@string/free_text2"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/second_button"
+            android:background="@color/button"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintStart_toEndOf="@+id/first_button"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/third_button"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/app_name_text"/>
+    <Button
+            android:text="@string/free_text3"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/third_button"
+            android:background="@color/button" android:fontFamily="@font/roboto"
+            app:layout_constraintStart_toEndOf="@+id/second_button" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBaseline_toBaselineOf="@+id/second_button"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/car_license_text"
+            app:layout_constraintTop_toBottomOf="@+id/second_button"
+            app:layout_constraintBottom_toTopOf="@+id/brand_text" android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginStart="@dimen/margin_wide" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/margin_wide" app:layout_constraintEnd_toEndOf="parent"
+            android:hint="@string/license" android:fontFamily="@font/roboto" android:autofillHints=""/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/brand_text"
+            app:layout_constraintTop_toBottomOf="@+id/car_license_text"
+            app:layout_constraintBottom_toTopOf="@+id/name_text" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/margin_wide" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/margin_wide" android:hint="@string/brand"
+            android:fontFamily="@font/roboto" android:autofillHints=""/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/name_text"
+            app:layout_constraintTop_toBottomOf="@+id/brand_text" android:layout_marginStart="@dimen/margin_wide"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="@dimen/margin_wide"
+            app:layout_constraintEnd_toEndOf="parent" android:hint="@string/name" android:fontFamily="@font/roboto"
+            android:autofillHints=""/>
+    <Button
+            android:text="@string/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel_button"
+            app:layout_constraintTop_toBottomOf="@+id/delete_button"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide" android:layout_marginTop="8dp"
+            android:background="@color/cancel" android:fontFamily="@font/roboto"/>
+    <Button
+            android:text="@string/delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_button"
+            app:layout_constraintTop_toBottomOf="@+id/done_button"
+            app:layout_constraintBottom_toTopOf="@+id/cancel_button"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide" android:background="@color/delete"
+            android:layout_marginTop="8dp" android:fontFamily="@font/roboto"/>
+    <Button
+            android:text="@string/done"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/done_button"
+            app:layout_constraintTop_toBottomOf="@+id/name_text"
+            app:layout_constraintBottom_toTopOf="@+id/delete_button" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginTop="@dimen/margin_wide" android:layout_marginStart="@dimen/margin_wide"
+            android:layout_marginEnd="@dimen/margin_wide" android:background="@color/colorPrimaryDark"
+            android:fontFamily="@font/roboto"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
