@@ -30,16 +30,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.first_button).setOnClickListener{
-            park1(it)
             parkNumber = 1
+            park1(it)
         }
         findViewById<Button>(R.id.second_button).setOnClickListener{
-            park2(it)
             parkNumber = 2
+            park2(it)
         }
         findViewById<Button>(R.id.third_button).setOnClickListener{
-            park3(it)
             parkNumber = 3
+            park3(it)
         }
         findViewById<Button>(R.id.close_button).setOnClickListener{
             cancel(it)
@@ -50,13 +50,58 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.reset_button).setOnClickListener{
             reset(it)
         }
+
+
+    }
+
+    private fun done (view: View){
+
+        val license = findViewById<EditText>(R.id.car_license_text)
+        val brand = findViewById<EditText>(R.id.brand_text1)
+        val name = findViewById<EditText>(R.id.name_text)
+
+        if (parkNumber == 1){
+            license1= license.text.toString()
+            brand1 = brand.text.toString()
+            name1 = name.text.toString()
+
+            if (license1.isEmpty()){
+                first_button.text = "Free"
+            }else{
+                first_button.text = license1
+            }
+        }
+        if (parkNumber == 2){
+            license2 = license.text.toString()
+            brand2 = brand.text.toString()
+            name2 = name.text.toString()
+
+            if (license2.isEmpty()){
+                second_button.text = "Free"
+            }else{
+                second_button.text = license2
+            }
+        }
+        if (parkNumber == 3){
+            license3= license.text.toString()
+            brand3 = brand.text.toString()
+            name3 = name.text.toString()
+
+            if (license3.isEmpty()){
+                third_button.text = "Free"
+            }else{
+                third_button.text = license3
+            }
+        }
+
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken,0)
     }
 
     private fun park1 (view: View){
         val license = findViewById<EditText>(R.id.car_license_text)
         val brand = findViewById<EditText>(R.id.brand_text1)
         val name = findViewById<EditText>(R.id.name_text)
-
         license.visibility = View.VISIBLE
         brand.visibility = View.VISIBLE
         name.visibility = View.VISIBLE
@@ -68,29 +113,15 @@ class MainActivity : AppCompatActivity() {
         delete.visibility = View.VISIBLE
         cancel.visibility = View.VISIBLE
 
+        license.setText(license1)
+        brand.setText(brand1)
+        name.setText(name1)
     }
-    private fun park3 (view: View){
-        val license = findViewById<EditText>(R.id.car_license_text)
-        val brand = findViewById<EditText>(R.id.brand_text1)
-        val name = findViewById<EditText>(R.id.name_text)
 
-        license.visibility = View.VISIBLE
-        brand.visibility = View.VISIBLE
-        name.visibility = View.VISIBLE
-
-        val done = findViewById<Button>(R.id.done_button)
-        val delete = findViewById<Button>(R.id.reset_button)
-        val cancel = findViewById<Button>(R.id.close_button)
-        done.visibility = View.VISIBLE
-        delete.visibility = View.VISIBLE
-        cancel.visibility = View.VISIBLE
-
-    }
     private fun park2 (view: View){
         val license = findViewById<EditText>(R.id.car_license_text)
         val brand = findViewById<EditText>(R.id.brand_text1)
         val name = findViewById<EditText>(R.id.name_text)
-
         license.visibility = View.VISIBLE
         brand.visibility = View.VISIBLE
         name.visibility = View.VISIBLE
@@ -102,6 +133,29 @@ class MainActivity : AppCompatActivity() {
         delete.visibility = View.VISIBLE
         cancel.visibility = View.VISIBLE
 
+        license.setText(license2)
+        brand.setText(brand2)
+        name.setText(name2)
+    }
+
+    private fun park3 (view: View){
+        val license = findViewById<EditText>(R.id.car_license_text)
+        val brand = findViewById<EditText>(R.id.brand_text1)
+        val name = findViewById<EditText>(R.id.name_text)
+        license.visibility = View.VISIBLE
+        brand.visibility = View.VISIBLE
+        name.visibility = View.VISIBLE
+
+        val done = findViewById<Button>(R.id.done_button)
+        val delete = findViewById<Button>(R.id.reset_button)
+        val cancel = findViewById<Button>(R.id.close_button)
+        done.visibility = View.VISIBLE
+        delete.visibility = View.VISIBLE
+        cancel.visibility = View.VISIBLE
+
+        license.setText(license3)
+        brand.setText(brand3)
+        name.setText(name3)
     }
 
     private fun cancel (view: View){
@@ -121,22 +175,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun done (view: View){
-
-        val license = findViewById<EditText>(R.id.car_license_text)
-        val brand = findViewById<EditText>(R.id.brand_text1)
-        val name = findViewById<EditText>(R.id.name_text)
-
-
-        if (name.text.toString().isEmpty()){
-            first_button.text = "Free"
-        }else{
-            first_button.text = name.text
-        }
-
-        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(view.windowToken,0)
-    }
 
     private fun reset (view: View){
         val license = findViewById<EditText>(R.id.car_license_text)
